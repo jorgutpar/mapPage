@@ -1,6 +1,15 @@
 <h1>hello world!</h1>
 <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
 <script>
+  
+  function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+
+  
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB98UdlTyMjpus-vBbl25TTVE9dkDq_Xks",
@@ -13,13 +22,9 @@
   
   var database = firebase.database();
 
-  
-  function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
-  });
+    
+  alert(database);
+
 }
   
 </script>
