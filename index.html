@@ -57,6 +57,17 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
 }
 
+      
+      map.addListener('click', function() {
+    // 3 seconds after the center of the map has changed, pan back to the
+    // marker.
+	var marker = new google.maps.Marker({
+		position: pos,
+		map: map,
+		title: 'I FOUND YOU!'
+	})
+  });
+      
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDP6pJWleGtaNFWlSxwLe2wmIDHdEPRg&signed_in=true&callback=initMap"
         async defer>
