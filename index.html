@@ -28,6 +28,14 @@ function initMap() {
     center: {lat: -34.397, lng: 150.644},
     zoom: 6
   });
+
+  map.addListener('click', function() {
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      title: 'I FOUND YOU!'
+  })
+
   var infoWindow = new google.maps.InfoWindow({map: map});
 
   // Try HTML5 geolocation.
@@ -38,14 +46,7 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-	map.addListener('click', function() {
-    // 3 seconds after the center of the map has changed, pan back to the
-    // marker.
-	var marker = new google.maps.Marker({
-		position: pos,
-		map: map,
-		title: 'I FOUND YOU!'
-	})
+
   });
 	    
       infoWindow.setPosition(pos);
