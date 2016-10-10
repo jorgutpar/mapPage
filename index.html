@@ -21,7 +21,12 @@
   firebase.initializeApp(config);
   
   var database = firebase.database();
-  document.write(database);
+    
+  
+  var adaRef = firebase.database().ref("sites/0");
+  var key = adaRef.key;                 // key === "ada"
+
+  document.write(key);
     
   alert(database);
 
